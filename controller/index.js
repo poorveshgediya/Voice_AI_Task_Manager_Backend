@@ -17,43 +17,6 @@ export const FetchTask = async (req, res) => {
 export const CreateTask = async (req, res) => {
   try {
     const { voiceText } = req.body || {};
-    // const promt = `
-    // Parse the following voice command into a task operation. Return only a valid json.
-    // Voice Command: ${voiceText}
-    // JSON Format:
-    // {
-    //         "operation": "create" | "read",
-    //         "title": "Task title",
-    //         "description": "Task description (optional)",
-          
-    //     }
-
-    //     Examples:
-    //     1.)Create a task to buy groceries
-    //     {
-    //         "operation": "create",
-    //         "title": "Buy groceries",
-    //         "description": ""
-    //     }
-
-    //     2.)Create a task to finish the project report by tomorrow
-    //     {
-    //         "operation": "create",
-    //         "title": "Finish the project report",
-    //         "description": "by tomorrow"
-    //     }
-
-    //     3.)Show me all my tasks
-    //     {
-    //         "operation": "read",
-    //         "title": "",
-    //         "description": ""
-    //     }
-
-    //     Parse the following voice command: ${voiceText} properly into a valid json format and make sure not to use any  markdown , we need only in proper json format.
-    // `;
-
-
     const promt = `
 You are an AI assistant that converts voice commands into structured task operations.
 
