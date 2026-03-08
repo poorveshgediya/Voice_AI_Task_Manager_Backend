@@ -115,3 +115,22 @@ Voice Command: ${voiceText}
     console.error("Error ==> CreateTask ", err.message);
   }
 };
+
+export const DeleteTask = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const DeletedTask = await Task.findByIdAndDelete(id);
+
+    if (!DeletedTask) {
+      return res.status(404).json({ message: "Task Not Found" });
+    }
+
+    return res.status(200).json({ message: "Task Deleted Successfully" });
+    
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal Server Error!",
+      err,
+    });
+  }
+};
